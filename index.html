@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // http://155.248.247.88:802/data/getFacultiesByDepartment?id=61ae4cb55e4d1429e4692beb
+        // const response = await fetch('http://155.248.247.88:802/data/getFacultiesByDepartment?id=61ae4cb55e4d1429e4692beb');
+        // const myJson = await response.json();
+        // console.log(myJson);
+        const userAction = async () => {
+        const response = await fetch('http://155.248.247.88:802/data/getFacultiesByDepartment?id=61ae4cb55e4d1429e4692beb');
+        const myJson = await response.json(); //extract JSON from the http response
+        console.log(myJson);
+        document.getElementById('data').innerHTML = myJson.message;
+        // do something with myJson
+        }
+
+        userAction();
+    </script>
+    <h1 id="data"></h1>
+</body>
+</html>
